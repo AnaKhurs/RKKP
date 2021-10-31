@@ -20,7 +20,7 @@ function App() {
 
     return (
         <div className={"App"}>
-            <UncontrolledOnOff/> {/*неконтролируемый*/}
+            <UncontrolledOnOff onChange={setOn}/> {on.toString()} {/*неконтролируемый*/}
             <OnOff on={on} setOn={setOn}/> {/*контролируемый*/}
 
             <UncontrolledAccordion titleValue={"Menu"}/> {/*неконтролируемый*/}
