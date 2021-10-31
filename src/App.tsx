@@ -1,25 +1,34 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Accordion from "./components/Accordion/Accordion";
-import {Rating} from "./components/Rating/Rating";
+import {Rating, RatingValueType} from "./components/Rating/Rating";
 import {Technologies} from "./components/Technologies/Technologies";
 import {Header} from "./components/Header/Header";
-import OnOff from "./components/OnOff/OnOff";
+import UncontrolledOnOff from "./components/UncontrolledOnOff/UncontrolledOnOff";
 import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
+import OnOff from "./components/OnOff/OnOff";
 
 function App() {
     console.log('App rendering')
+
+    let [valueRating, setValueRating] = useState<RatingValueType>(0)
+
+    let [collapsedAccordion, setCollapsedAccordion] = useState<boolean>(true)
+
+    let [on, setOn] = useState(false)
+
     return (
         <div className={"App"}>
-            <OnOff/>
+            <UncontrolledOnOff/> {/*неконтролируемый*/}
+            <OnOff on={on} setOn={setOn}/> {/*контролируемый*/}
 
             <UncontrolledAccordion titleValue={"Menu"}/> {/*неконтролируемый*/}
             <UncontrolledAccordion titleValue={"Users"}/> {/*неконтролируемый*/}
-            <Accordion titleValue={"Users"} collapsed={false}/> {/*контролируемый*/}
+            <Accordion titleValue={"Users"} collapsed={collapsedAccordion} setCollapsedAccordion={setCollapsedAccordion}/> {/*контролируемый*/}
 
             <UncontrolledRating/> {/*неконтролируемый*/}
-          {/*  <Rating value={3}/> контролируемый*/}
+            <Rating value={valueRating} setValueRating={setValueRating}/> {/*контролируемый*/}
 
             {/*     <Header />
         <Technologies />
