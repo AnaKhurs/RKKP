@@ -11,11 +11,15 @@ import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRa
 function App() {
     console.log('App rendering')
     return (
-        <div>
+        <div className={"App"}>
             <OnOff/>
-            <UncontrolledAccordion titleValue={"Menu"}/>
-            <UncontrolledAccordion titleValue={"Users"}/>
-            <UncontrolledRating/>
+
+            <UncontrolledAccordion titleValue={"Menu"}/> {/*неконтролируемый*/}
+            <UncontrolledAccordion titleValue={"Users"}/> {/*неконтролируемый*/}
+            <Accordion titleValue={"Users"} collapsed={false}/> {/*контролируемый*/}
+
+            <UncontrolledRating/> {/*неконтролируемый*/}
+            <Rating value={3}/> {/*контролируемый*/}
 
             {/*     <Header />
         <Technologies />
