@@ -19,7 +19,7 @@ function App() {
             <Accordion titleValue={"Users"} collapsed={false}/> {/*контролируемый*/}
 
             <UncontrolledRating/> {/*неконтролируемый*/}
-            <Rating value={3}/> {/*контролируемый*/}
+          {/*  <Rating value={3}/> контролируемый*/}
 
             {/*     <Header />
         <Technologies />
