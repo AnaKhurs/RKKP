@@ -1,13 +1,11 @@
 import React, {useState} from 'react';
 import './App.css';
-import Accordion from "./components/Accordion/Accordion";
+import {Accordion} from "./components/Accordion/Accordion";
 import {Rating, RatingValueType} from "./components/Rating/Rating";
-import {Technologies} from "./components/Technologies/Technologies";
-import {Header} from "./components/Header/Header";
-import UncontrolledOnOff from "./components/UncontrolledOnOff/UncontrolledOnOff";
-import UncontrolledAccordion from "./components/UncontrolledAccordion/UncontrolledAccordion";
+import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
+import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
-import OnOff from "./components/OnOff/OnOff";
+import {OnOff} from "./components/OnOff/OnOff";
 
 function App() {
     console.log('App rendering')
@@ -23,26 +21,12 @@ function App() {
             <UncontrolledOnOff onChange={setOn}/> {on.toString()} {/*неконтролируемый*/}
             <OnOff on={on} setOn={setOn}/> {/*контролируемый*/}
 
-            <UncontrolledAccordion titleValue={"Menu"}/> {/*неконтролируемый*/}
-            <UncontrolledAccordion titleValue={"Users"}/> {/*неконтролируемый*/}
-            <Accordion titleValue={"Users"} collapsed={collapsedAccordion} setCollapsedAccordion={setCollapsedAccordion}/> {/*контролируемый*/}
+            <UncontrolledAccordion titleValue={"Menu"}/>
+            <UncontrolledAccordion titleValue={"Users"}/>
+            <Accordion titleValue={"Users"} collapsed={collapsedAccordion} setCollapsedAccordion={setCollapsedAccordion}/>
 
-            <UncontrolledRating/> {/*неконтролируемый*/}
-            <Rating value={valueRating} setValueRating={setValueRating}/> {/*контролируемый*/}
-
-            {/*     <Header />
-        <Technologies />
-        <PageTitle title={"This is APP component"}/>
-        <PageTitle title={"My friends"}/>
-        <Rating value = {3}/>*/}
-            {/*       <Accordion titleValue = {"Menu"} collapsed = {true} />
-        <Accordion titleValue = {"Users"} collapsed = {false} />
-        <Rating value = {0}/>
-        <Rating value = {1}/>
-        <Rating value = {2}/>
-        <Rating value = {3}/>
-        <Rating value = {4}/>
-        <Rating value = {5}/>*/}
+            <UncontrolledRating/>
+            <Rating value={valueRating} setValueRating={setValueRating}/>
         </div>
     );
 }

@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import {Rating} from "./Rating";
+import {Rating, RatingValueType} from "./Rating";
+import {Primary} from "../../stories/Button.stories";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'Rating stories',
+    title: 'component/Rating stories',
     component: Rating,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {
@@ -19,23 +20,10 @@ const Template: ComponentStory<typeof Rating> = (args) => <Rating {...args} />;
 export const EmptyStars = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-    primary: true,
-    label: 'Button',
+    primary: true
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-    label: 'Button',
-};
-
-export const Large = Template.bind({});
-Large.args = {
-    size: 'large',
-    label: 'Button',
-};
-
-export const Small = Template.bind({});
-Small.args = {
-    size: 'small',
-    label: 'Button',
-};
+export const RatingChanging = () => {
+    const [rating, setRating] = useState<RatingValueType>(3)
+   return <Rating value={rating} setValueRating={setRating}/>
+}

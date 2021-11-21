@@ -5,9 +5,7 @@ type PropsType = {
     setOn: (on: boolean)=> void
 }
 
-function OnOff({on, setOn}: PropsType) {
-
-
+export function OnOff({on, setOn}: PropsType) {
 
     console.log('on:' + on)
 
@@ -49,5 +47,3 @@ function OnOff({on, setOn}: PropsType) {
 
 
 }
-
-export default OnOff;
