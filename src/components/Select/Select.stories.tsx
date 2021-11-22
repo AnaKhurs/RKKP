@@ -2,13 +2,14 @@ import React, {useState} from 'react';
 import {ComponentStory, ComponentMeta, Story} from '@storybook/react';
 
 import {action} from "@storybook/addon-actions";
-import {Accordion, AccordionPropsType} from "./Accordion";
+import {Select} from "./Select";
+
 
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
     title: 'component/Accordion stories',
-    component: Accordion,
+    component: Select,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {
         color: {
@@ -18,10 +19,10 @@ export default {
             }
         }
     },
-} as ComponentMeta<typeof Accordion>;
+} as ComponentMeta<typeof Select>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Accordion> = (args) => <Accordion {...args} />;
+const Template: ComponentStory<typeof Select> = (args) => <Select {...args} />;
 
 const callback = action("accordion mode change event fired")
 const onClick = action("some item was clicked")
