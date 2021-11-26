@@ -1,7 +1,11 @@
+import React from "react";
+
+
+
 type PropsSelectType = {
-    value: any
+    value?: any
     onChange: (value: any) => void
-    items: ItemType[]
+    items: Array<ItemType>
 }
 
 export type ItemType = {
@@ -10,10 +14,16 @@ export type ItemType = {
 }
 
 export const Select = (props: PropsSelectType) => {
+    const selectItem = props.items.find(i=> i.value === props.value)
     return (
         <div>
-            <div>{props.items.find(i  => i.value===props.value)}</div>
-            {props.items.map(i => <div>{i.title}</div>)}
+            <select>
+                <option value="">Minsk</option>
+                <option value="">Moscow</option>
+                <option value="">Kiev</option>
+            </select>
+            <h3>{selectItem && selectItem.title}</h3>
+            {props.items.map(i => <div key={i.value}>{i.title}</div>)}
         </div>
     )
 }
