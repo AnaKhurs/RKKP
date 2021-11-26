@@ -37,10 +37,18 @@ export const Select = (props: PropsSelectType) => {
                         : props.items[i - 1];
                     if (pretendentItem) {
                         props.onChange(pretendentItem.value)
-                        break;
+                       return
                     }
                 }
             }
+            if(!selectItem){
+                props.onChange(props.items[0].value)
+            }
+
+        }
+
+        if(e.key==="Enter" ||e.key==="Escape" ){
+            setActive(false)
         }
     }
 
