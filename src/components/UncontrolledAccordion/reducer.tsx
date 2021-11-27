@@ -9,8 +9,11 @@ export type StateType = {
 export const TOGGLE_COLLAPSED = 'TOGGLE-COLLAPSED'
 
 export const reducer = (state: StateType, action: ActionType): StateType => {
-    if (action.type === TOGGLE_COLLAPSED) {
-        return {...state, collapsed: !state.collapsed}
+    switch (action.type) {
+        case TOGGLE_COLLAPSED:
+            return {...state, collapsed: !state.collapsed}
+        default:
+            throw new Error("Bad action type")
     }
     return state
 }

@@ -23,7 +23,7 @@ function App() {
 
             <UncontrolledAccordion titleValue={"Menu"}/>
             <UncontrolledAccordion titleValue={"Users"}/>
-            <Accordion titleValue={"Users"} collapsed={collapsedAccordion} setCollapsedAccordion={setCollapsedAccordion}/>
+           {/* <Accordion titleValue={"Users"} collapsed={collapsedAccordion} setCollapsedAccordion={setCollapsedAccordion}/>*/}
 
             <UncontrolledRating/>
             <Rating value={valueRating} setValueRating={setValueRating}/>
