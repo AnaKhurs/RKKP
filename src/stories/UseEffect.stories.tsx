@@ -72,9 +72,13 @@ export const SetIntervalExample = () => {
 
     useEffect(() => {
 
-        setInterval(() => {
+        const idInterval = setInterval(() => {
             setCounter(state => state + 1)
         }, 1000)
+
+        return () => {
+            clearInterval(idInterval)
+        }
 
     }, [])
 
